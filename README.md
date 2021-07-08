@@ -2,7 +2,7 @@
 
 In this exercise we will go through the process of creating a model for the database, adding objects of the model into the database, then finally dynamically displaying these objects on a webpage based on the path specified.  
 <br/><br/>
-## 1.Prepare for the coding environment  
+## 1. Prepare for the coding environment  
 
 SSH into the test machine. The password is 123456.
 ```sh
@@ -13,7 +13,7 @@ Once you are in, activate the python virtual environment and cd into the project
 workon dj && cd mysite
 ```
 <br/><br/>
-## 2.Create a new model
+## 2. Create a new model
 - The model should be called "Transportation"
 - The model should have a many to one relationship with "ToDoList"
 - the model should contain one string attribute called "type"
@@ -21,7 +21,7 @@ workon dj && cd mysite
 To start with, open the file with the name "models.py". Have a look at the model class called "Item",  your new model should be definied in a very similar manner.
 
 <br/><br/>
-## 3.Migrate the new model
+## 3. Migrate the new model
 Once you are done with models.py, save it and go back to command line. Now we need to tell Django database about the existence of the new model. First we create a migration file:
 
 ```sh
@@ -37,7 +37,7 @@ If no error appears then the model has been successfully added.
 
 
 <br/><br/>
-## 4.Add new objects to the model in the database
+## 4. Add new objects to the model in the database
 We will use python shell for adding objects. 
 ```sh
 python manage.py shell
@@ -71,7 +71,7 @@ Now you have created a list of "Transportation" objects for Alice's List. If you
 Optional: If you have extra time, also create a list of "Item" objects for Alice's List
 
 <br/><br/>
-## 5.Show "Transportation" objects on the webpage
+## 5. Show "Transportation" objects on the webpage
 Now we are done using the python shell.
 ```sh
 >>> exit()
@@ -85,7 +85,7 @@ Finally, modify the return statement so webpage will output the transportations 
 
 
 <br/><br/>
-## 6.Start the server and test the website
+## 6. Start the server and test the website
 Go back to the command line and start the server
 ```sh
 ./runproject
