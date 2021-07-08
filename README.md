@@ -4,11 +4,11 @@
 
 In this exercise we will go through the process of creating a model for the database, adding objects of the model into the database, then finally dynamically displaying these objects on a webpage based on the path specified.  
 
-Hello
+
 \
 \
 \
-World!
+
 
 ## Prepare for the coding environment  
 
