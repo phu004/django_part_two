@@ -8,8 +8,6 @@ In this exercise we will go through the process of creating a model for the data
 \
 \
 \
-
-
 ## Prepare for the coding environment  
 
 SSH into the test machine. The password is 123456.
