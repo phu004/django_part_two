@@ -16,7 +16,7 @@ workon dj && cd mysite
 ## 2. Create a new model
 - The model should be called "Transportation"
 - The model should have a many to one relationship with "ToDoList"
-- the model should contain one string attribute called "type"
+- the model should contain  string attribute called "type"
 
 To start with, open the file with the name "models.py". Have a look at the model class called "Item",  your new model should be definied in a very similar manner.
 
