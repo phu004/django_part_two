@@ -21,6 +21,7 @@ workon dj && cd mysite
 - the model should contain one string attribute called "type"
 
 To start with, open the file with the name "models.py". Have a look at the model class called "Item",  your new model should be definied in a very similar manner.
+
 <br/><br/>
 ## Migrate the new model
 Once you are done with models.py, save it and go back to command line. Now we need to tell Django database about the existence of the new model. First we create a migration file:
