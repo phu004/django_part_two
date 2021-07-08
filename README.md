@@ -12,8 +12,7 @@ ssh your_upi@130.216.39.213
 ```
 Once you are in, activate the python virtual environment and cd into the project folder
 ```sh
-workon dj
-cd mysite
+workon dj && cd mysite
 ```
 
 ## Create a new model
@@ -35,29 +34,41 @@ Then we apply the migration
 ```sh
 python manage.py migrate
 ```
+If no error appears then the model has been successfully added.
 
 
 
-
-
-## Installation
-
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
-
-Install the dependencies and devDependencies and start the server.
-
+## Add new objects to the model in the database
+We will use python shell for adding objects. 
 ```sh
-cd dillinger
-npm i
-node app
+python manage.py shell
+```
+The first thing you want do is tell the shell about the model we want to interact with.
+```sh
+>>> from main.models import ToDoList, Transportation, Item
 ```
 
-For production environments...
+We will create a new "ToDoList" called "Alice's List"
+```sh
+>>> t = ToDoList(name="Alice's List")
+>>> t.save()
+```
+
+Then we will add in a bunch of new "Transportation" objects to Alice's List
+```sh
+>>> t.transportation_set.create(type="bus")
+<Transportation: bus>
+>>> t.transportation_set.create(type="ferry")
+<Transportation: ferry>
+```
+
+You can create as many "Transportation" objects as you want. When you query all the "Transportation" objects in Alice's List, it should return all the objects you just added.
 
 ```sh
-npm install --production
-NODE_ENV=production node app
+>>> t.transportation_set.all()
+<QuerySet [<Transportation: bus>, <Transportation: ferry>]>
 ```
+
 
 ## Plugins
 
