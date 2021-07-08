@@ -1,6 +1,4 @@
 # Django Workshop Exercise 2
-![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)
-
 
 In this exercise we will go through the process of creating a model for the database, adding objects of the model into the database, then finally dynamically displaying these objects on a webpage based on the path specified.  
 <br/><br/>
@@ -17,7 +15,7 @@ workon dj && cd mysite
 <br/><br/>
 ## Create a new model
 - The model should be called "Transportation"
-- The model should have a many to one relation ship with ToDoList
+- The model should have a many to one relationship with "ToDoList"
 - the model should contain one string attribute called "type"
 
 To start with, open the file with the name "models.py". Have a look at the model class called "Item",  your new model should be definied in a very similar manner.
@@ -63,18 +61,39 @@ Then we will add in a bunch of new "Transportation" objects to Alice's List
 <Transportation: ferry>
 ```
 
-You can create as many "Transportation" objects as you want. When you query all the "Transportation" objects in Alice's List, it should return all the objects you just added.
+Now you have created a list of "Transportation" objects for Alice's List. If you query all the "Transportation" objects in Alice's List, it should return all the objects you just added.
 
 ```sh
 >>> t.transportation_set.all()
 <QuerySet [<Transportation: bus>, <Transportation: ferry>]>
 ```
 
+Optional: If you have extra time, also create a list of "Item" objects for Alice's List
+
+<br/><br/>
+## Show "Transportation" objects on the webpage
+Now we are done using the python shell.
+```sh
+>>> exit()
+```
+
+Open the file with the name "views.py". First modify the "Import lines" to import the "Transportation" object. 
+
+Then, take a look at how the variable "items" are generated. Create another variable called "transportations" in a similar manner, so it contains all the types of the transportations that were added to Alice's List. 
+
+Finally, modify the return statement so webpage will output the transportations belong to Alice's List.
 
 
+<br/><br/>
+## Start the server and test the website
+Go back to the command line and start the server
+```sh
+./runproject
+```
 
+Copy the url from the output and paste it in your browser, followed by the path "Alice's List". When you execute this url, the website should show something similar to the following:
 
-
+![alt text](https://github.com/phu004/django_part_two/blob/main/exercise2.png)
 
 
 
